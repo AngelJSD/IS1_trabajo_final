@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>People</title>
+</head>
+<body>
+	<form action="person" method="POST">
+		<table>
+			<tbody>
+				<tr>
+					<td>ID</td>
+					<td><input type="hidden" name="id" value="{{person.id}}" />{{person.id}}</td>
+				</tr>
+				<tr>
+					<td>First Name</td>
+					<td><input type="text" name="firstName" value="{{person.firstName}}" /></td>
+				</tr>
+				<tr>
+					<td>Last Name</td>
+					<td><input type="text" name="lastName" value="{{person.lastName}}" /></td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+		<input type="submit" value="Save" />
+		<input type="button" value="Cancel" onclick="history.back();" />
+	</form>
+</body>
+</html>

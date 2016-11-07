@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>People</title>
+</head>
+<body>
+	<table class=>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Number</th>
+				<th>Balance</th>
+				<th>Owners</th>
+				<th>Creation Date</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+	{% for account in accounts %}
+			<tr>
+				<td>{{ account.id }}</td>
+				<td>{{ account.number }}</td>
+				<td>{{ account.balance }}</td>
+				<td>
+					<ul>
+				{% for owner in account.owners %}
+					<li>{{owner.firstName}} {{owner.lastName}}</li>
+				{% endfor %}
+					</ul>
+				</td>
+				<td>{{ account.created }}</td>
+			</tr>
+	{% endfor %}
+        </tbody>
+      </table>
+      <br />
+      <a href="add-account">Add Account</a>
+</body>
+</html>

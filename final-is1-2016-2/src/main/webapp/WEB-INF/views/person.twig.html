@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>People</title>
+</head>
+<body>
+	<table class=>
+		<thead>
+		</thead>
+		
+		<tbody>
+			<tr>
+				<th>ID</th>
+				<td>{{ person.id }}</td>
+			</tr>
+			<tr>
+				<th>First Name</th>
+				<td>{{ person.firstName }}</td>
+			</tr>
+			<tr>
+				<th>Last Name</th>
+				<td>{{ person.lastName }}</td>
+			</tr>
+        </tbody>
+      </table>
+      <br />
+      <a href="add-person?id={{person.id}}">Modify</a> |<a href="add-person">Add New Person</a> | <a href="person">List All</a>
+</body>
+</html>

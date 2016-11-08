@@ -18,7 +18,12 @@ public class Usuario extends Person implements BaseEntity<Long>{
 	@Column(nullable = false)
 	private boolean activo;
 	
+	@OneToMany(mappedBy = "autor")
 	private Collection<Playlist> playlists;
+	
+	@ManyToMany
+    @JoinTable(name="cancion_usuario")
+	private Collection<Cancion> favoritas;
 	
 	@Override
 	public Long getId() {

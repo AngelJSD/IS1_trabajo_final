@@ -17,7 +17,7 @@ public abstract class Person {
 	@Id
 	@SequenceGenerator(name = "person_id_generator", sequenceName = "person_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "person_id_generator")
-	private Long id;
+	protected Long id;
 
 	@Column(length = 64)
 	private String firstName;
@@ -31,6 +31,7 @@ public abstract class Person {
 	@Column(length = 64)
 	private String contraseña;
 
+	
 
 	public String getFirstName() {
 		return firstName;

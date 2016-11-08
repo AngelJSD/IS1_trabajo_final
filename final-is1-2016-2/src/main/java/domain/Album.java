@@ -3,20 +3,20 @@ package domain;
 import java.util.Collection;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-public class Playlist extends ListaCanciones implements BaseEntity<Long> {
+public class Album extends ListaCanciones implements BaseEntity<Long> {
 
-	@ManyToOne
-	private Usuario	autor;
+	@ManyToMany(mappedBy = "albumes")
+	private Collection<Artista> autores;
 	
 	@Override
 	public Long getId() {
@@ -25,7 +25,8 @@ public class Playlist extends ListaCanciones implements BaseEntity<Long> {
 
 	@Override
 	public void setId(Long id) {
-		super.id = id;		
-	}	
-		
+		super.id = id;
+
+	}
+
 }

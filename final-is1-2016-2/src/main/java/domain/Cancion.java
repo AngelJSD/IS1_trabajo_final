@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -11,6 +12,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 
+@Entity
 public class Cancion implements BaseEntity<Long>{
 	
 	@Id
@@ -20,6 +22,9 @@ public class Cancion implements BaseEntity<Long>{
 	
 	@Column(length = 64)
 	private String nombre;
+	
+	@ManyToMany(mappedBy = "favoritas")
+	private Collection<Usuario> usuarios;
 	
 	@Column(nullable = false)
 	private Date fecha = new Date();
@@ -32,6 +37,9 @@ public class Cancion implements BaseEntity<Long>{
 	
 	@Column(length = 64)
 	private String genero;
+	
+	@ManyToMany(mappedBy = "canciones")
+	private Collection<ListaCanciones> listsSongs;
 
 	@Override
 	public Long getId() {

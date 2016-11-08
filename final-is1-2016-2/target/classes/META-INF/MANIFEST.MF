@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Implementation-Title: bank
 Implementation-Version: 1.2.3.RELEASE
-Built-By: angel
+Built-By: fabalcu
 Implementation-Vendor-Id: ucsp.is1
-Build-Jdk: 1.8.0_45
+Build-Jdk: 1.8.0_102
 Created-By: Maven Integration for Eclipse
 Implementation-Vendor: Pivotal Software, Inc.
 
